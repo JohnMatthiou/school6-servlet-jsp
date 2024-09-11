@@ -6,23 +6,35 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/user-register.css">
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="header.jsp" %>
 <div class="main-content">
 
     <div class="form m-bottom">
-<%--        <form method="POST" action="${pageContext.request.contextPath}/users/register">--%>
-            <form method="POST" action="">
+        <%--        <form method="POST" action="${pageContext.request.contextPath}/users/register">--%>
+        <form method="POST" action="">
             <div class="row m-bottom">
-                <input class="m-bottom" type="email" name="username" value="${requestScope.userRegisterDTO.username}" required placeholder="Username">
+                <input class="m-bottom" type="email" name="username" value="${requestScope.userRegisterDTO.username}"
+                       required placeholder="Username">
                 <p class="validation-error">${requestScope.usernameMessage}</p>
             </div>
             <div class="row m-bottom">
-                <input class="m-bottom" type="password" name="password" value="${requestScope.userRegisterDTO.password}" required placeholder="Password">
+                <input class="m-bottom" type="password" name="password" value="${requestScope.userRegisterDTO.password}"
+                       required placeholder="Password">
                 <p class="validation-error">${requestScope.passwordMessage}</p>
             </div>
             <div class="row m-bottom">
-                <input class="m-bottom" type="password" name="confirmPassword" value="${requestScope.userRegisterDTO.confirmedPassword}" required placeholder="Confirm Password">
+                <input class="m-bottom" type="password" name="confirmPassword"
+                       value="${requestScope.userRegisterDTO.confirmedPassword}" required
+                       placeholder="Confirm Password">
                 <p class="validation-error">${requestScope.confirmPasswordMessage}</p>
+            </div>
+            <div class="row m-bottom">
+                <select class="m-bottom" name="role">
+                    <option value="Teacher">Καθηγητής</option>
+                    <option value="Student">Μαθητής</option>
+                    <option value="Admin">Διαχειριστής</option>
+                </select>
+                <p class="validation-error">${requestScope.roleMessage}</p>
             </div>
             <div class="row">
                 <button type="submit">Εγγραφή</button>
@@ -39,6 +51,6 @@
     </div>
 </div>
 
-<%@ include file="footer.jsp"%>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
